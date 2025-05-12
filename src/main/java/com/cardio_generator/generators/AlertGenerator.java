@@ -3,6 +3,10 @@ package com.cardio_generator.generators;
 import java.util.Random; // fixed : There are no other blank lines between import statements.
 import com.cardio_generator.outputs.OutputStrategy;
 
+/**
+ * Class for generating alerts for patients
+ * Alerts can be resolved or triggered
+ */
 public class AlertGenerator implements PatientDataGenerator {
 
     public static final Random RANDOM_GENERATOR = new Random(); // fixed : Constant names use UPPER_SNAKE_CASE

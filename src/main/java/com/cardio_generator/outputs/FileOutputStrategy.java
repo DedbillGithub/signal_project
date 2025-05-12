@@ -7,6 +7,9 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Class for outputting a specific input into a given directory
+ */
 public class FileOutputStrategy implements OutputStrategy { // fixed : first letter of the class should be capitalized
 
     private String baseDirectory; // Non-constant field names are written in lowerCamelCase.

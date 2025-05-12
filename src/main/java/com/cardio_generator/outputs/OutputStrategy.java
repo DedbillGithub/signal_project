@@ -1,5 +1,9 @@
 package com.cardio_generator.outputs;
 
+/**
+ * Interface for the strategy used when outputting patient data
+ * contains a {@link #output(int, long, String, String)} method that is responsible for outputting given data
+ */
 public interface OutputStrategy {
     /**
      * Outputs the given parameters
