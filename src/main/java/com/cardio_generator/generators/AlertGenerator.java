@@ -8,6 +8,10 @@ public class AlertGenerator implements PatientDataGenerator {
     public static final Random RANDOM_GENERATOR = new Random(); // fixed : Constant names use UPPER_SNAKE_CASE
     private boolean[] alertStates; // false = resolved, true = pressed // fixed : Non-constant field names are written in lowerCamelCase.
 
+    /**
+     * Constructor for AlertGenerator
+     * @param patientCount number of patients
+     */
     public AlertGenerator(int patientCount) {
         alertStates = new boolean[patientCount + 1];
     }

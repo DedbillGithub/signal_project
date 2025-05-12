@@ -8,6 +8,11 @@ public class BloodSaturationDataGenerator implements PatientDataGenerator {
     private static final Random random = new Random();
     private int[] lastSaturationValues;
 
+    /**
+     * Constructor for BloodSaturationDataGenerator
+     * Generates random blood saturation values from 95 to 100
+     * @param patientCount number of patients
+     */
     public BloodSaturationDataGenerator(int patientCount) {
         lastSaturationValues = new int[patientCount + 1];
 

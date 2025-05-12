@@ -13,6 +13,10 @@ public class FileOutputStrategy implements OutputStrategy { // fixed : first let
 
     public final ConcurrentHashMap<String, String> FILE_MAP = new ConcurrentHashMap<>(); //fixed : Constant names use UPPER_SNAKE_CASE
 
+    /**
+     * Constructor for FileOutputStrategy
+     * @param baseDirectory directory of the output files
+     */
     public FileOutputStrategy(String baseDirectory) {
         this.baseDirectory = baseDirectory; //fixed : removed blank line
     }
