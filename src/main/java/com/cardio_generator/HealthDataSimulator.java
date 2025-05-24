@@ -43,8 +43,7 @@ public class HealthDataSimulator {
      * @param args arguements to be passed to {@link #parseArguments(String[])}
      * @throws IOException if {@link #parseArguments(String[])} throws an exception
      */
-    public static void main(String[] args) throws IOException {
-
+    public static void startSimulation(String[] args) throws IOException {
         parseArguments(args);
 
         scheduler = Executors.newScheduledThreadPool(patientCount * 4);
@@ -55,7 +54,6 @@ public class HealthDataSimulator {
         scheduleTasksForPatients(patientIds);
     }
 
-    
     /** Parses the main arguements
      * @param args a String[] that contains the following arguements:
      * "-h" prints help

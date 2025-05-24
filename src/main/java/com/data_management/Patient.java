@@ -52,6 +52,21 @@ public class Patient {
      *         range
      */
     public List<PatientRecord> getRecords(long startTime, long endTime) {
+        List<PatientRecord> validRecords = new ArrayList<>();
+
+        for (PatientRecord record : patientRecords) {
+            if (record.getTimestamp() > startTime && record.getTimestamp() < endTime)
+                validRecords.add(record);
+        }
+
+        return validRecords;
+    }
+
+    /**
+     * method for retrieving patient records
+     * @return returns all patient records
+     */
+    public List<PatientRecord> getAllRecords() {
         return patientRecords;
     }
 }

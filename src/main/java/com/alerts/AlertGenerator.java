@@ -1,7 +1,12 @@
 package com.alerts;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
+
 import com.data_management.DataStorage;
 import com.data_management.Patient;
+import com.data_management.PatientRecord;
 
 /**
  * The {@code AlertGenerator} class is responsible for monitoring patient data
@@ -35,7 +40,11 @@ public class AlertGenerator {
      * @param patient the patient data to evaluate for alert conditions
      */
     public void evaluateData(Patient patient) {
-        // Implementation goes here
+        List<PatientRecord> records = patient.getAllRecords();
+        for (PatientRecord record : records) {
+            Alert alert = new Alert(String.valueOf(record.getPatientId()), "", record.getTimestamp());
+            triggerAlert(alert);
+        }
     }
 
     /**
@@ -47,6 +56,11 @@ public class AlertGenerator {
      * @param alert the alert object containing details about the alert condition
      */
     private void triggerAlert(Alert alert) {
-        // Implementation might involve logging the alert or notifying staff
+        alert.setTriggered();
+
+        System.out.println("An alert has been triggered");
+        System.out.println("Alert patientId: " + alert.getPatientId());
+        System.out.println("Alert condition: " + alert.getCondition());
+        System.out.println("Alert timestamp: " + alert.getTimestamp());
     }
 }
